@@ -1,0 +1,25 @@
+{
+  "name": "calender",
+  "version": "1.0.0",
+  "description": "Calender microservice",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@scm.cms.hu-berlin.de:sp-microservices-group-2/calender.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jquery": "^3.6.0",
+    "mariadb": "^2.5.3",
+    "pug": "^3.0.2",
+    "sweetalert": "^2.1.2"
+  },
+  "directories": {
+    "doc": "doc"
+  }
+}

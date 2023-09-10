@@ -1,0 +1,150 @@
+openapi: '3.0.2'
+info:
+  title: Calendar
+  version: '1.0'
+servers:
+  - url: http://localhost:3000/api
+paths:
+  /appointments:
+    get:
+      description: Return all appointments .
+      responses:
+        '200':
+          description: OK
+  /appointment:
+    post:
+      description: Create appointment.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                start_date:
+                  type: string
+                start_time:
+                  type: string
+                location:
+                  type: string
+                region:
+                  type: string
+                tasks:
+                  type: string
+                domain:
+                  type: string
+                access:
+                  type: string
+                  enum: [FREE, REGISTRATION, APPLICATION]
+                participants:
+                  type: string
+              example:
+                name: Event
+                start_date: "2021-08-01"
+                start_time: "16:00"
+                location: HU-Berlin
+                region: Berlin
+                tasks: Task1, Task2
+                domain: Finanzen
+                access: FREE
+                participants: Altynai, Israa, Andres, Jens
+      responses:
+        '200':
+          description: OK
+
+  /appointment/{id}:
+    delete:
+      description: Delete appointment.
+      parameters:
+        - name: id
+          in: path
+          description: Appointment ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+    get:
+      description: Get appointment by id
+      parameters:
+        - name: id
+          in: path
+          description: Appointment ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+    put:
+      description: Patch appointment.
+      parameters:
+        - name: id
+          in: path
+          description: Appointment ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                start_date:
+                  type: string
+                start_time:
+                  type: string
+                location:
+                  type: string
+                region:
+                  type: string
+                tasks:
+                  type: string
+                domain:
+                  type: string
+                access:
+                  type: string
+                  enum: [FREE, REGISTRATION, APPLICATION]
+                participants:
+                  type: string
+              example:
+                name: Event
+                start_date: "2021-08-01"
+                start_time: "16:00"
+                location: HU-Berlin
+                region: Berlin
+                tasks: Task1, Task2
+                domain: Finanzen
+                access: FREE
+                participants: Altynai, Israa, Andres, Jens
+      responses:
+        '200':
+          description: OK
+  /:
+    get:
+      description: Test 
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  foo:
+                    type: string
+                    description: ...
+  /test:
+    get:
+      responses:
+        '200':
+          description: OK
+

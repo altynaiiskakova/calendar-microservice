@@ -1,0 +1,7 @@
+# Ins Projektverzeichnis wechseln
+
+
+sudo docker pull mariadb
+sudo docker run -p 127.0.0.1:3306:3306 --name calendar -e MYSQL_ROOT_PASSWORD=test1234 -d mariadb:latest
+
+bash scripts/create_db

@@ -1,0 +1,4 @@
+#!/usr/bash
+DIR=`dirname $0`
+echo $MYD
+mariadb -h 127.0.0.1 -u root -p < $DIR/create_db.sql
